@@ -114,7 +114,6 @@ namespace NETReactorSlayer.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.ctxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -344,7 +343,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem1});
             this.ctxLogs.Name = "ctxLogs";
             this.ctxLogs.ShowImageMargin = false;
-            this.ctxLogs.Size = new System.Drawing.Size(124, 38);
+            this.ctxLogs.Size = new System.Drawing.Size(110, 36);
             // 
             // toolStripMenuItem2
             // 
@@ -360,7 +359,7 @@ namespace NETReactorSlayer.GUI
             this.copyLogsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyLogsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.copyLogsToolStripMenuItem.Name = "copyLogsToolStripMenuItem";
-            this.copyLogsToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.copyLogsToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.copyLogsToolStripMenuItem.Text = "  Copy Logs";
             this.copyLogsToolStripMenuItem.Click += new System.EventHandler(this.copyLogsToolStripMenuItem_Click);
             // 
@@ -851,7 +850,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem12});
             this.ctxRename.Name = "ctxLogs";
             this.ctxRename.ShowImageMargin = false;
-            this.ctxRename.Size = new System.Drawing.Size(152, 158);
+            this.ctxRename.Size = new System.Drawing.Size(132, 146);
             this.ctxRename.Tag = "close";
             this.ctxRename.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.ctxRename_Closing);
             // 
@@ -869,7 +868,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem9.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem9.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(151, 24);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem9.Tag = "n";
             this.toolStripMenuItem9.Text = " ✓  Namespaces";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.SetRenamingOptions);
@@ -881,7 +880,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(151, 24);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem10.Tag = "t";
             this.toolStripMenuItem10.Text = " ✓  Types";
             this.toolStripMenuItem10.Click += new System.EventHandler(this.SetRenamingOptions);
@@ -893,7 +892,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem13.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem13.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(151, 24);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem13.Tag = "m";
             this.toolStripMenuItem13.Text = " ✓  Methods";
             this.toolStripMenuItem13.Click += new System.EventHandler(this.SetRenamingOptions);
@@ -905,7 +904,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem15.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem15.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(151, 24);
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem15.Tag = "f";
             this.toolStripMenuItem15.Text = " ✓  Fields";
             this.toolStripMenuItem15.Click += new System.EventHandler(this.SetRenamingOptions);
@@ -917,7 +916,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem14.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem14.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(151, 24);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem14.Tag = "p";
             this.toolStripMenuItem14.Text = " X  Properties";
             this.toolStripMenuItem14.Click += new System.EventHandler(this.SetRenamingOptions);
@@ -929,7 +928,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem16.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem16.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(151, 24);
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem16.Tag = "e";
             this.toolStripMenuItem16.Text = " ✓  Events";
             this.toolStripMenuItem16.Click += new System.EventHandler(this.SetRenamingOptions);
@@ -1111,9 +1110,9 @@ namespace NETReactorSlayer.GUI
             this.llblGitHub.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.llblGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(14)))), ((int)(((byte)(18)))));
             this.llblGitHub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(14)))), ((int)(((byte)(18)))));
-            this.llblGitHub.Location = new System.Drawing.Point(405, 10);
+            this.llblGitHub.Location = new System.Drawing.Point(351, 10);
             this.llblGitHub.Name = "llblGitHub";
-            this.llblGitHub.Size = new System.Drawing.Size(45, 15);
+            this.llblGitHub.Size = new System.Drawing.Size(38, 12);
             this.llblGitHub.TabIndex = 7;
             this.llblGitHub.TabStop = true;
             this.llblGitHub.Tag = "https://github.com/SychicBoy/NETReactorSlayer";
@@ -1127,10 +1126,10 @@ namespace NETReactorSlayer.GUI
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(316, 10);
+            this.label2.Location = new System.Drawing.Point(272, 10);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.Size = new System.Drawing.Size(79, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "Repository: ";
             // 
@@ -1140,9 +1139,9 @@ namespace NETReactorSlayer.GUI
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(943, 10);
+            this.label5.Location = new System.Drawing.Point(952, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 15);
+            this.label5.Size = new System.Drawing.Size(40, 12);
             this.label5.TabIndex = 4;
             this.label5.Text = "Version:";
             // 
@@ -1154,7 +1153,7 @@ namespace NETReactorSlayer.GUI
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(14)))), ((int)(((byte)(18)))));
             this.lblVersion.Location = new System.Drawing.Point(992, 10);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(0, 15);
+            this.lblVersion.Size = new System.Drawing.Size(0, 12);
             this.lblVersion.TabIndex = 5;
             // 
             // llblWebsite
@@ -1165,9 +1164,9 @@ namespace NETReactorSlayer.GUI
             this.llblWebsite.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.llblWebsite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(14)))), ((int)(((byte)(18)))));
             this.llblWebsite.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(14)))), ((int)(((byte)(18)))));
-            this.llblWebsite.Location = new System.Drawing.Point(193, 10);
+            this.llblWebsite.Location = new System.Drawing.Point(166, 10);
             this.llblWebsite.Name = "llblWebsite";
-            this.llblWebsite.Size = new System.Drawing.Size(123, 15);
+            this.llblWebsite.Size = new System.Drawing.Size(106, 12);
             this.llblWebsite.TabIndex = 3;
             this.llblWebsite.TabStop = true;
             this.llblWebsite.Tag = "https://www.CodeStrikers.org";
@@ -1181,10 +1180,10 @@ namespace NETReactorSlayer.GUI
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(117, 10);
+            this.label4.Location = new System.Drawing.Point(99, 10);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(76, 15);
+            this.label4.Size = new System.Drawing.Size(67, 12);
             this.label4.TabIndex = 2;
             this.label4.Text = "Website: ";
             // 
@@ -1194,9 +1193,9 @@ namespace NETReactorSlayer.GUI
             this.lblAuthor.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblAuthor.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, System.Drawing.FontStyle.Bold);
             this.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(14)))), ((int)(((byte)(18)))));
-            this.lblAuthor.Location = new System.Drawing.Point(55, 10);
+            this.lblAuthor.Location = new System.Drawing.Point(48, 10);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(62, 15);
+            this.lblAuthor.Size = new System.Drawing.Size(51, 12);
             this.lblAuthor.TabIndex = 1;
             this.lblAuthor.Text = "SychicBoy";
             // 
@@ -1208,7 +1207,7 @@ namespace NETReactorSlayer.GUI
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(5, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 15);
+            this.label1.Size = new System.Drawing.Size(43, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Author: ";
             // 
@@ -1218,13 +1217,12 @@ namespace NETReactorSlayer.GUI
             this.ctxMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ctxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3,
-            this.toolStripMenuItem6,
             this.toolStripMenuItem7,
             this.toolStripMenuItem4,
             this.toolStripMenuItem5});
             this.ctxMenu.Name = "ctxLogs";
             this.ctxMenu.ShowImageMargin = false;
-            this.ctxMenu.Size = new System.Drawing.Size(169, 86);
+            this.ctxMenu.Size = new System.Drawing.Size(87, 58);
             // 
             // toolStripMenuItem3
             // 
@@ -1234,23 +1232,13 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 5);
             this.toolStripMenuItem3.Text = " ";
             // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem6.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem6.ForeColor = System.Drawing.Color.Silver;
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(168, 24);
-            this.toolStripMenuItem6.Text = "  Check For Update";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
-            // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripMenuItem7.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem7.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(168, 24);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(86, 22);
             this.toolStripMenuItem7.Text = "  About";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -1260,7 +1248,7 @@ namespace NETReactorSlayer.GUI
             this.toolStripMenuItem4.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem4.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(168, 24);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(86, 22);
             this.toolStripMenuItem4.Text = "  Exit";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -1274,7 +1262,7 @@ namespace NETReactorSlayer.GUI
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1057, 631);
@@ -1372,7 +1360,6 @@ namespace NETReactorSlayer.GUI
         private ToolStripMenuItem toolStripMenuItem3;
         private ToolStripMenuItem toolStripMenuItem4;
         private ToolStripMenuItem toolStripMenuItem5;
-        private ToolStripMenuItem toolStripMenuItem6;
         private ToolStripMenuItem toolStripMenuItem7;
         private NrsCheckBox chkKeepTypes;
         private NrsCheckBox chkRemCalls;

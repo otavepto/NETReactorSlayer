@@ -361,26 +361,17 @@ namespace NETReactorSlayer.GUI
             {
                 Interval = 10
             };
-            timer.Tick += async delegate
+            timer.Tick += delegate
             {
                 if (Opacity < 1.0)
+                {
                     Opacity += 0.05;
-                if (!(Opacity >= 1.0))
                     return;
+                }
                 timer.Stop();
                 Show();
                 Opacity = 1.0;
                 timer.Dispose();
-                try
-                {
-                    if (await IsLatestVersion())
-                        return;
-                    if (MsgBox.Show("A new version is available. Would you like to download it?",
-                            ".NETReactorSlayer",
-                            MsgBox.MsgButtons.YesNoCancel, MsgBox.MsgIcon.Question, this) == DialogResult.Yes)
-                        Process.Start("https://github.com/SychicBoy/NETReactorSlayer/releases/latest");
-                }
-                catch { }
             };
             timer.Start();
         }
@@ -551,50 +542,6 @@ Description: An open source (GPLv3) deobfuscator and unpacker for Eziriz .NET Re
 Author: SychicBoy
 Company: CS-RET
 Website: CodeStrikers.org", "About .NETReactorSlayer", MsgBox.MsgButtons.Ok, MsgBox.MsgIcon.Info, this);
-
-        private async void toolStripMenuItem6_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (await IsLatestVersion())
-                    MsgBox.Show("Congratulations, You are using the latest version!", ".NETReactorSlayer",
-                        MsgBox.MsgButtons.Ok, MsgBox.MsgIcon.Info, this);
-                else
-                {
-                    if (MsgBox.Show("A new version is available. Would you like to download it?",
-                            ".NETReactorSlayer",
-                            MsgBox.MsgButtons.YesNoCancel, MsgBox.MsgIcon.Question, this) == DialogResult.Yes)
-                        Process.Start("https://github.com/SychicBoy/NETReactorSlayer/releases/latest");
-                }
-            }
-            catch (Exception exception)
-            {
-                MsgBox.Show(exception.Message, ".NETReactorSlayer", MsgBox.MsgButtons.Ok, MsgBox.MsgIcon.Error, this);
-            }
-        }
-
-        private static async Task<bool> IsLatestVersion()
-        {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            var client = new HttpClient();
-            var response =
-                await client.GetAsync("https://github.com/SychicBoy/NETReactorSlayer/releases/latest");
-            response.EnsureSuccessStatusCode();
-            var responseUri = response.RequestMessage.RequestUri.ToString();
-            response.Dispose();
-            client.Dispose();
-            var latestVersionStr = responseUri.Substring(responseUri.LastIndexOf('/') + 1);
-            var currentVersionStr =
-                FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
-
-            if (int.TryParse(Regex.Match(latestVersionStr, @"\d+\.\d+\.\d+\.\d+").Value.Replace(".", string.Empty),
-                    out var latestVersion) && int.TryParse(
-                    Regex.Match(currentVersionStr, @"\d+\.\d+\.\d+\.\d+").Value.Replace(".", string.Empty),
-                    out var currentVersion))
-                return latestVersion <= currentVersion;
-
-            return true;
-        }
 
         private void SetRenamingOptions(object sender, EventArgs e)
         {
