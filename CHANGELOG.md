@@ -1,6 +1,9 @@
 # CHANGELOG
 All releases are documented in this file.
 
+## **v6.4.1.0 (unofficial)**
+* updated patterns for newer variant
+
 ## [v6.0.0.0](https://github.com/SychicBoy/NETReactorSlayer/compare/v6.0.0.0..v5.0.0.0)
 > October 6, 2022
 ### :wrench: Changes:
