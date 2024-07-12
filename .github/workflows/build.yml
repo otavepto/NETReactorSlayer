@@ -23,7 +23,12 @@ jobs:
               shell: pwsh
     strategy:
       matrix:
-        platform: [netframework, net6.0-win32, net6.0-win64, net6.0-win-arm, net6.0-win-arm64, net6.0-linux64, net6.0-linux-arm, net6.0-linux-arm64, net6.0-osx64, netcoreapp3.1-win32, netcoreapp3.1-win64, netcoreapp3.1-win-arm, netcoreapp3.1-win-arm64, netcoreapp3.1-linux64, netcoreapp3.1-linux-arm, netcoreapp3.1-linux-arm64, netcoreapp3.1-osx64]
+        platform: [
+          netframework,
+          net6.0-win32, net6.0-win64, net6.0-win-arm, net6.0-win-arm64,
+          net6.0-linux64, net6.0-linux-arm, net6.0-linux-arm64,
+          net6.0-osx64, 
+        ]
         include:
           - platform: netframework
             build-dir: net48
@@ -54,30 +59,6 @@ jobs:
             build-dir: net6.0\osx-x64\publish
           
           
-          - platform: netcoreapp3.1-win32
-            build-dir: netcoreapp3.1\win-x86\publish
-            
-          - platform: netcoreapp3.1-win64
-            build-dir: netcoreapp3.1\win-x64\publish
-            
-          - platform: netcoreapp3.1-win-arm
-            build-dir: netcoreapp3.1\win-arm\publish
-
-          - platform: netcoreapp3.1-win-arm64
-            build-dir: netcoreapp3.1\win-arm64\publish
-
-          - platform: netcoreapp3.1-linux64
-            build-dir: netcoreapp3.1\linux-x64\publish
-
-          - platform: netcoreapp3.1-linux-arm
-            build-dir: netcoreapp3.1\linux-arm\publish
-
-          - platform: netcoreapp3.1-linux-arm64
-            build-dir: netcoreapp3.1\linux-arm64\publish
-
-          - platform: netcoreapp3.1-osx64
-            build-dir: netcoreapp3.1\osx-x64\publish
-            
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

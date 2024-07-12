@@ -2,7 +2,7 @@
 
     <PropertyGroup>
 
-        <TargetFrameworks>net48;netcoreapp3.1;net6.0</TargetFrameworks>
+        <TargetFrameworks>net48;net6.0</TargetFrameworks>
         <TargetFramework Condition="'$(TargetFrameworks)' == ''">net6.0</TargetFramework>
         <IsDotNetFramework>false</IsDotNetFramework>
         <IsDotNet>false</IsDotNet>

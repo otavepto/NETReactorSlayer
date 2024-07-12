@@ -1,5 +1,5 @@
 param(
-	[ValidateSet("all", "netframework", "net6.0-win32", "net6.0-win64", "net6.0-win-arm", "net6.0-win-arm64", "net6.0-linux64", "net6.0-linux-arm", "net6.0-linux-arm64", "net6.0-osx64", "netcoreapp3.1-win32", "netcoreapp3.1-win64", "netcoreapp3.1-win-arm", "netcoreapp3.1-win-arm64", "netcoreapp3.1-linux64", "netcoreapp3.1-linux-arm", "netcoreapp3.1-linux-arm64", "netcoreapp3.1-osx64")]
+	[ValidateSet("all", "netframework", "net6.0-win32", "net6.0-win64", "net6.0-win-arm", "net6.0-win-arm64", "net6.0-linux64", "net6.0-linux-arm", "net6.0-linux-arm64", "net6.0-osx64" )]
 	[string]$framework = 'all',
 	${-no-msbuild}
 )
@@ -67,14 +67,6 @@ if($framework -eq 'all') {
 	BuildNETCore linux-arm "net6.0"
 	BuildNETCore linux-arm64 "net6.0"
 	BuildNETCore osx-x64 "net6.0"
-	BuildNETCore win-x86 "netcoreapp3.1"
-	BuildNETCore win-x64 "netcoreapp3.1"
-	BuildNETCore win-arm "netcoreapp3.1"
-	BuildNETCore win-arm64 "netcoreapp3.1"
-	BuildNETCore linux-x64 "netcoreapp3.1"
-	BuildNETCore linux-arm "netcoreapp3.1"
-	BuildNETCore linux-arm64 "netcoreapp3.1"
-	BuildNETCore osx-x64 "netcoreapp3.1"
 
 	Write-Host
 	Write-Host ==========================
@@ -107,30 +99,6 @@ else {
 	}
 	elseif($framework -eq 'net6.0-osx64'){
 		BuildNETCore osx-x64 'net6.0'
-	}
-	elseif($framework -eq 'netcoreapp3.1-win32'){
-		BuildNETCore win-x86 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-win64'){
-		BuildNETCore win-x64 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-win-arm'){
-		BuildNETCore win-arm 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-win-arm64'){
-		BuildNETCore win-arm64 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-linux64'){
-		BuildNETCore linux-x64 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-linux-arm'){
-		BuildNETCore linux-arm 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-linux-arm64'){
-		BuildNETCore linux-arm64 'netcoreapp3.1'
-	}
-	elseif($framework -eq 'netcoreapp3.1-osx64'){
-		BuildNETCore osx-x64 'netcoreapp3.1'
 	}
 
 	Write-Host
