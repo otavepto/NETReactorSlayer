@@ -536,7 +536,7 @@ namespace NETReactorSlayer.GUI
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e) =>
             MsgBox.Show(
-                $@"Product Name: .NETReactorSlayer
+                $@"Product Name: .NETReactorSlayer (unofficial)
 Version: {lblVersion.Text}
 Description: An open source (GPLv3) deobfuscator and unpacker for Eziriz .NET Reactor
 Author: SychicBoy

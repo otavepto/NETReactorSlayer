@@ -105,6 +105,7 @@ namespace NETReactorSlayer.Core
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(@"
+  (unofficial)
   ░█▄─░█ ░█▀▀▀ ▀▀█▀▀ 
   ░█░█░█ ░█▀▀▀ ─░█── 
   ░█──▀█ ░█▄▄▄ ─░█── 
@@ -119,7 +120,7 @@ namespace NETReactorSlayer.Core
 
 ");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("  .NET Reactor Slayer by CS-RET");
+            Console.WriteLine("  .NET Reactor Slayer by CS-RET (unofficial)");
             Console.Write("  Website: ");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("www.CodeStrikers.org");

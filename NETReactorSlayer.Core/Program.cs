@@ -33,7 +33,7 @@ namespace NETReactorSlayer.Core
             if (!CheckArguments(args))
                 return;
 
-            Console.Title = ".NET Reactor Slayer";
+            Console.Title = ".NET Reactor Slayer (unofficial)";
             Console.OutputEncoding = Encoding.UTF8;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
