@@ -7,6 +7,8 @@
 		<Platform>AnyCPU</Platform>
 		<OutputPath>..\bin\$(Configuration)\</OutputPath>
 		<OutputType>Exe</OutputType>
+		<StartupObject>NETReactorSlayerr_x64.CLI.Program</StartupObject>
+		<PlatformTarget>AnyCPU</PlatformTarget>
 
 	</PropertyGroup>
 

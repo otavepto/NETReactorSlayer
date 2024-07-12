@@ -7,6 +7,9 @@
 		<Platforms>AnyCPU</Platforms>
 		<OutputPath>..\bin\$(Configuration)\</OutputPath>
 		<OutputType>Exe</OutputType>
+		<Prefer32Bit>true</Prefer32Bit>
+		<StartupObject>NETReactorSlayer.CLI.Program</StartupObject>
+		<PlatformTarget>AnyCPU</PlatformTarget>
 
 	</PropertyGroup>
 
