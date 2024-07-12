@@ -13,6 +13,7 @@ on:
   
 env:
   CI_REQ_DOTNET_SDK_VER: 8.0.x
+  BUILD_FOLDER_PREFIX: NETReactorSlayer
   
 jobs:
   build:
@@ -53,16 +54,16 @@ jobs:
         run: nuget restore NETReactorSlayer.GUI\NETReactorSlayer.GUI.csproj -PackagesDirectory .\packages\
         
       - name: Build ${{matrix.platform}}
-        run: .\build.ps1 ${{matrix.platform}} no-msbuild
+        run: .\build.ps1 ${{matrix.platform}}
         
       - name: Create build artifacts archive
-        run: Compress-Archive -Path ".\bin\Release\${{matrix.platform}}\" -CompressionLevel 'Optimal' -DestinationPath ".\bin\NETReactorSlayer-${{matrix.platform}}.zip" -Force
+        run: Compress-Archive -Path ".\bin\Release\${{env.BUILD_FOLDER_PREFIX}}-${{matrix.platform}}\" -CompressionLevel 'Optimal' -DestinationPath ".\bin\${{env.BUILD_FOLDER_PREFIX}}-${{matrix.platform}}.zip" -Force
 
       - name: Upload build artifacts archive
         uses: actions/upload-artifact@v4
         with:
           name: NETReactorSlayer-${{matrix.platform}}-${{ github.sha }}
-          path: "bin/NETReactorSlayer-${{matrix.platform}}.zip"
+          path: "bin/${{env.BUILD_FOLDER_PREFIX}}-${{matrix.platform}}.zip"
           retention-days: 1
           compression-level: 9
           if-no-files-found: error
@@ -71,4 +72,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: "bin/NETReactorSlayer-${{matrix.platform}}.zip"
+          files: "bin/${{env.BUILD_FOLDER_PREFIX}}-${{matrix.platform}}.zip"
