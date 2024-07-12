@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
   
 env:
-  CI_REQ_DOTNET_SDK_VER: 6.0.x
+  CI_REQ_DOTNET_SDK_VER: 8.0.x
   
 jobs:
   build:
@@ -25,45 +25,16 @@ jobs:
       matrix:
         platform: [
           netframework,
-          net6.0-win32, net6.0-win64, net6.0-win-arm, net6.0-win-arm64,
-          net6.0-linux64, net6.0-linux-arm, net6.0-linux-arm64,
-          net6.0-osx64, 
+          win-x86, win-x64, win-arm64
+          linux-x64, linux-arm, linux-arm64,
+          osx-x64, 
         ]
-        include:
-          - platform: netframework
-            build-dir: net48
-            
-            
-          - platform: net6.0-win32
-            build-dir: net6.0\win-x86\publish
-            
-          - platform: net6.0-win64
-            build-dir: net6.0\win-x64\publish
-
-          - platform: net6.0-win-arm
-            build-dir: net6.0\win-arm\publish
-
-          - platform: net6.0-win-arm64
-            build-dir: net6.0\win-arm64\publish
-            
-          - platform: net6.0-linux64
-            build-dir: net6.0\linux-x64\publish
-
-          - platform: net6.0-linux-arm
-            build-dir: net6.0\linux-arm\publish
-            
-          - platform: net6.0-linux-arm64
-            build-dir: net6.0\linux-arm64\publish
-
-          - platform: net6.0-osx64
-            build-dir: net6.0\osx-x64\publish
-          
           
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-            submodules: true
+          submodules: true
             
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -77,41 +48,26 @@ jobs:
         uses: NuGet/setup-nuget@v2.0.0
         
       - name: Restore NuGet packages for NETReactorSlayer.GUI
-        run: nuget restore NETReactorSlayer.GUI\NETReactorSlayer.GUI.csproj -PackagesDirectory .\packages\
         if: ${{ contains(matrix.platform, 'netframework') }}
+        run: nuget restore NETReactorSlayer.GUI\NETReactorSlayer.GUI.csproj -PackagesDirectory .\packages\
         
       - name: Build ${{matrix.platform}}
-        run: .\build.ps1 ${{matrix.platform}}
+        run: .\build.ps1 ${{matrix.platform}} no-msbuild
         
-      - name: Create output directory
-        run: New-Item -ItemType Directory -Path C:\builtfiles\NETReactorSlayer-${{matrix.platform}} -Force > $null
-        continue-on-error: true
-        
-      - name: Copy release files for upload
-        run: Copy-Item -Path bin\Release\${{matrix.build-dir}}\* -Destination C:\builtfiles\NETReactorSlayer-${{matrix.platform}} -Recurse
-      
-      - name: Upload NETReactorSlayer
+      - name: Create build artifacts archive
+        run: Compress-Archive -Path ".\bin\Release\${{matrix.platform}}\" -CompressionLevel 'Optimal' -DestinationPath ".\bin\NETReactorSlayer-${{matrix.platform}}.zip" -Force
+
+      - name: Upload build artifacts archive
         uses: actions/upload-artifact@v4
-        if: ${{ contains(matrix.platform, 'netframework') && (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')) }}
         with:
           name: NETReactorSlayer-${{matrix.platform}}-${{ github.sha }}
-          path: C:\builtfiles\NETReactorSlayer-${{matrix.platform}}
+          path: "bin/NETReactorSlayer-${{matrix.platform}}.zip"
+          retention-days: 1
+          compression-level: 9
           if-no-files-found: error
-
-      - name: Upload NETReactorSlayer.CLI
-        uses: actions/upload-artifact@v4
-        if: ${{ !contains(matrix.platform, 'netframework') && (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/'))}}
-        with:
-          name: NETReactorSlayer.CLI-${{matrix.platform}}-${{ github.sha }}
-          path: C:\builtfiles\NETReactorSlayer-${{matrix.platform}}
-          if-no-files-found: error
-
-      - name: Create release archive
-        if: startsWith(github.ref, 'refs/tags/')
-        run: Compress-Archive -Path "C:\builtfiles\NETReactorSlayer-${{matrix.platform}}" -CompressionLevel 'Optimal' -DestinationPath "C:\builtfiles\NETReactorSlayer-${{matrix.platform}}.zip" -Force
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: "C:\builtfiles\NETReactorSlayer-${{matrix.platform}}.zip"
+          files: "bin/NETReactorSlayer-${{matrix.platform}}.zip"
