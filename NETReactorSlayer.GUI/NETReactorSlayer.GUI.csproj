@@ -4,7 +4,7 @@
 
   <PropertyGroup>
 
-    <TargetFrameworks>net48</TargetFrameworks>
+    <TargetFrameworks>net481</TargetFrameworks>
     <OutputPath>..\bin\$(Configuration)\</OutputPath>
     <OutputType>WinExe</OutputType>
     <AssemblyName>NETReactorSlayer</AssemblyName>
