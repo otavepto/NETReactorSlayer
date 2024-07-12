@@ -1,12 +1,8 @@
 name: GitHub CI
 on:
-  push:
-    paths-ignore:
-          - '**.md'
-          - '**.yml'
-    branches:
-      - master
   pull_request:
+    paths-ignore:
+      - '**.md'
     branches:
       - master
   release:
