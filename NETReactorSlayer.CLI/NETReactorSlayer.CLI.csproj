@@ -7,7 +7,6 @@
 		<Platforms>AnyCPU</Platforms>
 		<OutputPath>..\bin\$(Configuration)\</OutputPath>
 		<OutputType>Exe</OutputType>
-		<Prefer32Bit>true</Prefer32Bit>
 
 	</PropertyGroup>
 
