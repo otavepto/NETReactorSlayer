@@ -19,6 +19,7 @@ function BuildNETFramework {
   Write-Host 'Building .NET Framework x86 and x64 binaries'
   dotnet clean -v:m -c $configuration  -f net481 -p:TargetFrameworks=net481
   dotnet build --no-incremental -o "bin\$configuration\$build_folder_prefix-netframework\" -v:m -c $configuration -f net481 -p:TargetFrameworks=net481
+  #msbuild -p:OutputPath="..\bin\$configuration\$build_folder_prefix-netframework\" -v:m -m -restore -t:Build -p:Configuration=$configuration -p:TargetFrameworks=net481
   if ($LASTEXITCODE) { 
     Write-Host
     Write-Host ==========================
@@ -31,7 +32,7 @@ function BuildNETCore {
   param([string]$runtimeidentifier)
 
   Write-Host "Building .NET binaries, arch=$runtimeidentifier tfm=$tfm"
-  dotnet restore -v:m -f -r $runtimeidentifier 
+  # dotnet restore -v:m -f -r $runtimeidentifier 
   dotnet clean NETReactorSlayer.CLI\NETReactorSlayer.CLI.csproj -v:m -c $configuration -f $tfm -r $runtimeidentifier
   dotnet publish -o "bin\$configuration\$build_folder_prefix-$runtimeidentifier\" NETReactorSlayer.CLI\NETReactorSlayer.CLI.csproj -v:m -c $configuration -f $tfm -r $runtimeidentifier --self-contained -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishSingleFile=true -p:TargetFrameworks=$tfm
   if ($LASTEXITCODE) { 
