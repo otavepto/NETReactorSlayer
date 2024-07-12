@@ -43,7 +43,7 @@ function BuildNETCore {
   Write-Host "Building .NET binaries, arch=$runtimeidentifier tfm=$tfm"
 
   if (${-no-msbuild}) {
-    dotnet publish -o "bin\$configuration\$runtimeidentifier\" NETReactorSlayer.CLI\NETReactorSlayer.CLI.csproj -v:m -c $configuration -f $tfm -r $runtimeidentifier --self-contained -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=True -p:PublishSingleFile=true -p:TargetFrameworks=$tfm
+    dotnet publish -o "bin\$configuration\$runtimeidentifier\" NETReactorSlayer.CLI\NETReactorSlayer.CLI.csproj -v:m -c $configuration -f $tfm -r $runtimeidentifier --self-contained -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishSingleFile=true -p:TargetFrameworks=$tfm
     if ($LASTEXITCODE) { 
       Write-Host
       Write-Host ==========================
@@ -52,7 +52,7 @@ function BuildNETCore {
     }
   }
   else {
-    msbuild -p:OutputPath="..\bin\$configuration\$runtimeidentifier\" NETReactorSlayer.CLI\NETReactorSlayer.CLI.csproj -v:m -m -restore -t:Publish -p:Configuration=$configuration -p:TargetFramework=$tfm -p:RuntimeIdentifier=$runtimeidentifier -p:SelfContained=True -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=True -p:PublishSingleFile=true -p:TargetFrameworks=$tfm
+    msbuild -p:OutputPath="..\bin\$configuration\$runtimeidentifier\" NETReactorSlayer.CLI\NETReactorSlayer.CLI.csproj -v:m -m -restore -t:Publish -p:Configuration=$configuration -p:TargetFramework=$tfm -p:RuntimeIdentifier=$runtimeidentifier -p:SelfContained=True -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishSingleFile=true -p:TargetFrameworks=$tfm
     if ($LASTEXITCODE) { 
       Write-Host
       Write-Host ==========================
